@@ -1,0 +1,38 @@
+{
+	"manifest_version": 2,
+	"name": "标记管理器",
+	"version": "0.91",
+	"description": "一个简单的标记管理器",
+	"icons": {
+        "16": "images/icon128.png",
+        "48": "images/icon128.png",
+        "128": "images/icon128.png"
+    },
+	"browser_action": {
+		"default_icon": {
+            "19": "images/icon128.png",
+            "38": "images/icon128.png"
+        },
+		"default_title": "标记管理器",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+	{
+		"js": ["content_script.js"],
+		"matches": [
+		"<all_urls>"
+		],
+		"run_at": "document_end"
+	}
+	],
+	"background":{
+		"scripts":["background.js"]
+	},
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"storage",
+		"notifications",
+		"contextMenus"
+    ]
+}
